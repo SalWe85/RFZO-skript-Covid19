@@ -12,24 +12,47 @@
 (function() {
     'use strict';
     let glavniDiv = document.createElement(`div`);
+    glavniDiv.style.position = `fixed`;
+    glavniDiv.style.bottom = `0px`;
+    glavniDiv.style.display = `grid`;
+    glavniDiv.style.marginLeft = `0px`;
+    glavniDiv.style.paddingLeft = `20px`;
+    glavniDiv.style.paddingRight = `20px`;
+    glavniDiv.style.textAlign = `center`;
+    glavniDiv.style.background = `#222d32`;
 
     //Naslov
     let naslov = document.createElement(`p`);
     naslov.appendChild(document.createTextNode(`ДЗ Кучево - Covid19`));
     naslov.style.color = `white`;
-    naslov.style.marginLeft = `20px`;
+    naslov.style.paddingLeft = `10px`;
 
+
+    // deo 1 linija
+    let linijaD1 = document.createElement(`p`);
+    linijaD1.appendChild(document.createTextNode(`----------- Део 1 -----------`));
+    linijaD1.style.color = `white`;
+
+    //Telefon
+    const tel = document.createElement(`INPUT`);
+    tel.id = `Tel`;
+    tel.style.marginBottom = `10px`;
+    tel.setAttribute("type", "text");
+
+    // deo 1 dugme
+    let dugmeD1 = document.createElement(`BUTTON`);
+    dugmeD1.innerHTML = `Сними део 1`;
+    dugmeD1.style.color = `black`;
+    dugmeD1.style.marginBottom = `10px`;
 
     // deo 2 linija
     let linijaD2 = document.createElement(`p`);
-    linijaD2.appendChild(document.createTextNode(`------- Део 2 -------`));
+    linijaD2.appendChild(document.createTextNode(`----------- Део 2 -----------`));
     linijaD2.style.color = `white`;
-    linijaD2.style.marginLeft = `20px`;
 
     //<select> Doktori
     const selectDok = document.createElement(`select`);
     selectDok.id = `SelectDoktori`;
-    selectDok.style.marginLeft = `20px`;
     selectDok.style.marginBottom = `10px`;
     const doktori = [
         {ime: `Др Марија Јовановић`, tel: `0631434288`, naziv: `Марија`},
@@ -53,23 +76,41 @@
     //Datum
     const datum = document.createElement(`INPUT`);
     datum.id = `Datum`;
-    datum.style.marginLeft = `20px`;
     datum.style.marginBottom = `10px`;
     datum.placeholder="dd-mm-yyyy";
     datum.setAttribute("type", "date");
     datum.setAttribute("value", "2021.02.10");
 
+    // deo 2 dugme
+    let dugmeD2 = document.createElement(`BUTTON`);
+    dugmeD2.innerHTML = `Сними део 2`;
+    dugmeD2.style.color = `black`;
+    dugmeD2.style.marginBottom = `10px`;
+
 
     // deo 4a linija
     let linijaD4a = document.createElement(`p`);
-    linijaD4a.appendChild(document.createTextNode(`------- Део 4a -------`));
+    linijaD4a.appendChild(document.createTextNode(`----------- Део 4a -----------`));
     linijaD4a.style.color = `white`;
-    linijaD4a.style.marginLeft = `20px`;
+
+   /* // Vrsta testa deo 4a
+    const selectVT4a = document.createElement(`select`);
+    selectVT4a.id = `SelectVT4a`;
+    selectVT4a.style.marginBottom = `10px`;
+    const vrstaTesta4a = [
+        {punNaziv: `Real Time PCR test`, naziv: `PCR test`},
+        {punNaziv: `Брзи тест за детекцију антитела`, naziv: `Брзи тест`},
+        {punNaziv: `Антиген`, naziv: `Антиген`},
+        ];
+    let optionVT4a = `<option value="">Изаберите...</option>`;
+    vrstaTesta4a.forEach((test) => {
+        optionVT4a += `<option value="${test.punNaziv}">${test.naziv}</option>`;
+        });
+     selectVT4a.innerHTML = optionVT4a; */
 
     //<select> Sestre
     const selectSes = document.createElement(`select`);
     selectSes.id = `SelectSes`;
-    selectSes.style.marginLeft = `20px`;
     selectSes.style.marginBottom = `10px`;
     const sestre = [
         {ime: `Силардка Богић`, tel: `0693330170`, naziv: `Силардка`},
@@ -97,17 +138,33 @@
     selectSes.innerHTML = optionSes;
 
 
+   /* // Razlog testiranja
+    const selectRazlog = document.createElement(`select`);
+    selectRazlog.id = `SelectRazlog`;
+    selectRazlog.style.marginBottom = `10px`;
+    const razlogTesta = [
+        {value: `3`, punNaziv: `Лице са симптомима акутне респираторне болести и једним од клиничких знакова и смптома`, label: `Симптоми`},
+        {value: `10`, punNaziv: `Појединачни захтеви (на&nbsp;лични захтев)`, label: `Појединачни захтеви`},
+        {value: `12`, punNaziv: `Лица која се смештају у домове за старе и установе колективног смештаја`, label: `Смештај у старачки`},
+        {value: `13`, punNaziv: `Особе чије стање захтева хоспитализацију (неукључујући амбулантне прегледе и дневне болнице)`, label: `Хоспитализација`},
+        {value: `15`, punNaziv: `Специфичне групе експонираних након процене епидемиолошке службе (војска, полиција, студенти, запослени у јавном превозу…)`, label: `Специфичне групе`},
+        ];
+    let optionRazlog = `<option label="" value="">Изаберите разлог</option>`;
+    razlogTesta.forEach((raz) => {
+        optionRazlog += `<option label="${raz.label}" value="${raz.value}">${raz.punNaziv}</option>`;
+        });
+     selectRazlog.innerHTML = optionRazlog; */
+
+
     // deo 5 linija
     let linijaD5 = document.createElement(`p`);
-    linijaD5.appendChild(document.createTextNode(`------- Део 5 -------`));
+    linijaD5.appendChild(document.createTextNode(`----------- Део 5 -----------`));
     linijaD5.style.color = `white`;
-    linijaD5.style.marginLeft = `20px`;
 
 
     //<select> Izdao Rezultat
     const selectRez = document.createElement(`select`);
     selectRez.id = `SelectRez`;
-    selectRez.style.marginLeft = `20px`;
     selectRez.style.marginBottom = `10px`;
     const izdaoRezultat = [
         {ime: `Др Марија Јовановић`, tel: `0631434288`, naziv: `Марија`},
@@ -130,16 +187,31 @@
     });
     selectRez.innerHTML = optionRez;
 
+    //Autor
+    let autor = document.createElement(`p`);
+    autor.appendChild(document.createTextNode(`SalWe, 2021`));
+    autor.style.color = `white`;
+    autor.style.fontSize = `10px`;
+    autor.style.paddingLeft = `10px`;
+
+
 
     // dodavanje u DIV
     glavniDiv.appendChild(naslov);
+    glavniDiv.appendChild(linijaD1);
+    glavniDiv.appendChild(tel);
+    glavniDiv.appendChild(dugmeD1);
     glavniDiv.appendChild(linijaD2);
     glavniDiv.appendChild(selectDok);
     glavniDiv.appendChild(datum);
+    glavniDiv.appendChild(dugmeD2);
     glavniDiv.appendChild(linijaD4a);
+    //glavniDiv.appendChild(selectVT4a);
     glavniDiv.appendChild(selectSes);
+    //glavniDiv.appendChild(selectRazlog);
     glavniDiv.appendChild(linijaD5);
     glavniDiv.appendChild(selectRez);
+    glavniDiv.appendChild(autor);
 
 
     var asidePicker = document.getElementsByTagName("aside")[0];
@@ -148,6 +220,22 @@
     //------------------------------------------------------------------------------
 
     //Ubacivanje podataka na sajt RFZ-a
+
+    //Telefon
+    window.addEventListener("load", function(){
+        let telefonForma = document.getElementById(`telefon`).value;
+        document.getElementById(`Tel`).value = telefonForma;
+        });
+    tel.addEventListener("input", function(){
+        let telValue = document.getElementById(`Tel`).value;
+        document.getElementById(`telefon`).value = telValue;
+    });
+
+    //Dugme D1
+    let snimiD1 = () => {
+           document.getElementById("snimi_evidenciju1b").click();
+        };
+    dugmeD1.addEventListener("click", snimiD1);
 
     //Lekar
     selectDok.addEventListener("change", function(){
@@ -167,12 +255,38 @@
         document.getElementById(`datumPri`).value = datumCeo;
         });
 
+    //Dugme D2
+    let snimiD2 = () => {
+           document.getElementById("snimi_evidenciju2").click();
+        };
+    dugmeD2.addEventListener("click", snimiD2);
+
+   /* //Vrsta testa D4
+    selectVT4a.addEventListener("change", function(){
+        let vrstaTestaD4a = document.getElementById("SelectVT4a").value;
+        let mestoTesta = ``;
+        if (vrstaTestaD4a !== `Real Time PCR test`){
+           mestoTesta = `<option value="1196">(Лаб - брзи тест) Дом здравља Кучево</option>`;
+        }else {
+           mestoTesta = `<option value="19">Институт за вирусологију, вакцине и серуме Торлак</option>`;
+        }
+        document.getElementById(`select2-idVrstaTesta-container`).innerHTML = vrstaTestaD4a;
+        document.getElementById(`idLabTest`).innerHTML = mestoTesta;
+        }); */
+
     //Sestre
     selectSes.addEventListener("change", function(){
         let imeSestre = document.getElementById("SelectSes").value;
         document.getElementById(`imeUzorak`).value = imeSestre;
         document.getElementById(`mestoUzorak`).value = `Дом здравља Кучево`;
         });
+
+  /*  //Razlog testiranja
+    selectRazlog.addEventListener("change", function(){
+        let razlogValue = document.getElementById("SelectRazlog").value;
+        let razlogText = document.getElementById("SelectRazlog").selectedOptions[0].text;
+        document.getElementById(`idRazTest`).innerHTML = `<option value="${razlogValue}">${razlogText}</option>`;
+        }); */
 
     //Izdao Rezultat
     selectRez.addEventListener("change", function(){
