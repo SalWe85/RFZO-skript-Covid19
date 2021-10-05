@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DoktoriSkripta
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      1.1
 // @description  hack everything!
 // @author       SalWe
 // @match        https://ws.rfzo.rs/covid19v3ev/pacijent.php*
@@ -65,6 +65,8 @@
         {ime: `Др Славиша Лукић`, tel: `0600851555`, naziv: `Славиша`},
         {ime: `Др Никола Савић`, tel: `0603163888`, naziv: `Никола`},
         {ime: `Др Бојана Јовановић`, tel: `0640572616`, naziv: `Бојана`},
+        {ime: `Др Милош Филиповић`, tel: `0628154941`, naziv: `Филоповић`},
+        {ime: `Др Виолета Јовановић`, tel: `0637304875`, naziv: `Виолета`},
                     ];
     let optionDok = `<option value="">Изабери лекара</option>`;
     doktori.forEach((dok) => {
@@ -130,6 +132,7 @@
         {ime: `Биљана Јовановић`, tel: `0666881722`, naziv: `Биља`},
         {ime: `Ненад Животић`, tel: `0615267777`, naziv: `Ненад`},
         {ime: `Властимир Бабић`, tel: `0638245190`, naziv: `Власта`},
+        {ime: `Божица Маријоковић`, tel: `0606998300`, naziv: `Божица`},
                     ];
     let optionSes = `<option value="">Изабери сестру</option>`;
     sestre.forEach((ses) => {
@@ -180,6 +183,8 @@
         {ime: `Ивана Крстић`, tel: `0616025245`, naziv: `Ивана`},
         {ime: `Жаклина Животић`, tel: `0616937911`, naziv: `Жаклина`},
         {ime: `Александра Новаковић`, tel: `0600852687`, naziv: `Александра`},
+        {ime: `Др Милош Филиповић`, tel: `0628154941`, naziv: `Филоповић`},
+        {ime: `Др Виолета Јовановић`, tel: `0637304875`, naziv: `Виолета`},
         ];
     let optionRez = `<option value="">Издао резултат</option>`;
     izdaoRezultat.forEach((rez) => {
@@ -293,8 +298,5 @@
         let imeIzdaoRez = document.getElementById("SelectRez").value.split(',')[0];
         document.getElementById(`imeRez`).value = imeIzdaoRez;
         });
-
-
-
 
 })();
