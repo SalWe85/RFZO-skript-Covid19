@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         DoktoriSkripta
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  hack everything!
 // @author       SalWe
 // @match        https://ws.rfzo.rs/covid19v3ev/pacijent.php*
@@ -65,7 +65,7 @@
         {ime: `Др Славиша Лукић`, tel: `0600851555`, naziv: `Славиша`},
         {ime: `Др Никола Савић`, tel: `0603163888`, naziv: `Никола`},
         {ime: `Др Бојана Јовановић`, tel: `0640572616`, naziv: `Бојана`},
-        {ime: `Др Милош Филиповић`, tel: `0628154941`, naziv: `Филоповић`},
+        {ime: `Др Милош Филиповић`, tel: `0628154941`, naziv: `Филиповић`},
         {ime: `Др Виолета Јовановић`, tel: `0637304875`, naziv: `Виолета`},
                     ];
     let optionDok = `<option value="">Изабери лекара</option>`;
@@ -89,6 +89,26 @@
     dugmeD2.style.color = `black`;
     dugmeD2.style.marginBottom = `10px`;
 
+    // deo 3 linija
+    let linijaD3 = document.createElement(`p`);
+    linijaD3.appendChild(document.createTextNode(`----------- Део 3 -----------`));
+    linijaD3.id = `linijaD3`;
+    linijaD3.style.color = `white`;
+    linijaD3.style.cursor = `pointer`;
+
+  /*  //deo 3 Div
+    let divD3 = document.createElement(`div`);
+    divD3.id = `divD3`;
+    divD3.style.display = ``;
+    let chc1 = document.createElement(`INPUT`);
+    chc1.type = `checkbox`;
+    chc1.id = `chc1`;
+    let chc1L = document.createElement(`label`);
+    chc1L.htmlFor = `chc1`;
+    chc1L.style.color = `white`;
+    chc1L.appendChild(document.createTextNode(`ОС`));
+    divD3.appendChild(chc1);
+    divD3.appendChild(chc1L); */
 
     // deo 4a linija
     let linijaD4a = document.createElement(`p`);
@@ -183,7 +203,7 @@
         {ime: `Ивана Крстић`, tel: `0616025245`, naziv: `Ивана`},
         {ime: `Жаклина Животић`, tel: `0616937911`, naziv: `Жаклина`},
         {ime: `Александра Новаковић`, tel: `0600852687`, naziv: `Александра`},
-        {ime: `Др Милош Филиповић`, tel: `0628154941`, naziv: `Филоповић`},
+        {ime: `Др Милош Филиповић`, tel: `0628154941`, naziv: `Филиповић`},
         {ime: `Др Виолета Јовановић`, tel: `0637304875`, naziv: `Виолета`},
         ];
     let optionRez = `<option value="">Издао резултат</option>`;
@@ -210,6 +230,8 @@
     glavniDiv.appendChild(selectDok);
     glavniDiv.appendChild(datum);
     glavniDiv.appendChild(dugmeD2);
+    glavniDiv.appendChild(linijaD3);
+   // glavniDiv.appendChild(divD3);
     glavniDiv.appendChild(linijaD4a);
     //glavniDiv.appendChild(selectVT4a);
     glavniDiv.appendChild(selectSes);
@@ -227,7 +249,7 @@
     //Ubacivanje podataka na sajt RFZ-a
 
     //Telefon
-    window.addEventListener("load", function(){
+     window.addEventListener("load", function(){
         let telefonForma = document.getElementById(`telefon`).value;
         document.getElementById(`Tel`).value = telefonForma;
         });
@@ -266,6 +288,32 @@
         };
     dugmeD2.addEventListener("click", snimiD2);
 
+
+    //Deo 3 linija snimi
+    linijaD3.addEventListener(`click`, () => {
+        document.getElementById(`snimi_evidenciju3`).click();
+    });
+
+/*
+    //Deo 3 nevidljivost
+
+    linijaD3.addEventListener(`click`, () => {
+        let deo3DivHide = document.getElementById(`divD3`).style.display;
+        if (deo3DivHide === `none`) {
+        divD3.style.display = ``;
+        } else {divD3.style.display = `none`;}
+    });
+
+   //Deo 3 checkboxovi
+    chc1.addEventListener(`change`, () => {
+        let opstaSlabost = document.getElementById(`select2-slabost-container`).title;
+        if (opstaSlabost.title != `Да`) {
+        document.getElementById(`select2-slabost-container`).innerHTML = `Да`;
+        document.getElementById(`select2-slabost-container`).title = `Да`;
+        }
+
+    }); */
+
    /* //Vrsta testa D4
     selectVT4a.addEventListener("change", function(){
         let vrstaTestaD4a = document.getElementById("SelectVT4a").value;
@@ -278,6 +326,7 @@
         document.getElementById(`select2-idVrstaTesta-container`).innerHTML = vrstaTestaD4a;
         document.getElementById(`idLabTest`).innerHTML = mestoTesta;
         }); */
+
 
     //Sestre
     selectSes.addEventListener("change", function(){
@@ -298,5 +347,8 @@
         let imeIzdaoRez = document.getElementById("SelectRez").value.split(',')[0];
         document.getElementById(`imeRez`).value = imeIzdaoRez;
         });
+
+
+
 
 })();
