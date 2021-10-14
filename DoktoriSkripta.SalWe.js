@@ -153,6 +153,7 @@
         {ime: `Ненад Животић`, tel: `0615267777`, naziv: `Ненад`},
         {ime: `Властимир Бабић`, tel: `0638245190`, naziv: `Власта`},
         {ime: `Божица Маријоковић`, tel: `0606998300`, naziv: `Божица`},
+        {ime: `Весна Аћимовић`, tel: `0631661848`, naziv: `В Аћимовић`},
                     ];
     let optionSes = `<option value="">Изабери сестру</option>`;
     sestre.forEach((ses) => {
@@ -296,14 +297,12 @@
 
 /*
     //Deo 3 nevidljivost
-
     linijaD3.addEventListener(`click`, () => {
         let deo3DivHide = document.getElementById(`divD3`).style.display;
         if (deo3DivHide === `none`) {
         divD3.style.display = ``;
         } else {divD3.style.display = `none`;}
     });
-
    //Deo 3 checkboxovi
     chc1.addEventListener(`change`, () => {
         let opstaSlabost = document.getElementById(`select2-slabost-container`).title;
@@ -311,7 +310,6 @@
         document.getElementById(`select2-slabost-container`).innerHTML = `Да`;
         document.getElementById(`select2-slabost-container`).title = `Да`;
         }
-
     }); */
 
    /* //Vrsta testa D4
