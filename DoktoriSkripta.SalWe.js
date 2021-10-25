@@ -8,9 +8,11 @@
 // @icon         https://www.google.com/s2/favicons?domain=rfzo.rs
 // @grant        none
 // ==/UserScript==
-
+window.addEventListener("load", function(){
 (function() {
     'use strict';
+
+
     let glavniDiv = document.createElement(`div`);
     glavniDiv.style.position = `fixed`;
     glavniDiv.style.bottom = `0px`;
@@ -250,10 +252,10 @@
     //Ubacivanje podataka na sajt RFZ-a
 
     //Telefon
-     window.addEventListener("load", function(){
+     //window.addEventListener("load", function(){
         let telefonForma = document.getElementById(`telefon`).value;
         document.getElementById(`Tel`).value = telefonForma;
-        });
+       // });
     tel.addEventListener("input", function(){
         let telValue = document.getElementById(`Tel`).value;
         document.getElementById(`telefon`).value = telValue;
@@ -349,4 +351,4 @@
 
 
 
-})();
+})()});
