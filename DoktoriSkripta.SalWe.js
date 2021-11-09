@@ -98,39 +98,10 @@ window.addEventListener("load", function(){
     linijaD3.style.color = `white`;
     linijaD3.style.cursor = `pointer`;
 
-  /*  //deo 3 Div
-    let divD3 = document.createElement(`div`);
-    divD3.id = `divD3`;
-    divD3.style.display = ``;
-    let chc1 = document.createElement(`INPUT`);
-    chc1.type = `checkbox`;
-    chc1.id = `chc1`;
-    let chc1L = document.createElement(`label`);
-    chc1L.htmlFor = `chc1`;
-    chc1L.style.color = `white`;
-    chc1L.appendChild(document.createTextNode(`ОС`));
-    divD3.appendChild(chc1);
-    divD3.appendChild(chc1L); */
-
     // deo 4a linija
     let linijaD4a = document.createElement(`p`);
     linijaD4a.appendChild(document.createTextNode(`----------- Део 4a -----------`));
     linijaD4a.style.color = `white`;
-
-   /* // Vrsta testa deo 4a
-    const selectVT4a = document.createElement(`select`);
-    selectVT4a.id = `SelectVT4a`;
-    selectVT4a.style.marginBottom = `10px`;
-    const vrstaTesta4a = [
-        {punNaziv: `Real Time PCR test`, naziv: `PCR test`},
-        {punNaziv: `Брзи тест за детекцију антитела`, naziv: `Брзи тест`},
-        {punNaziv: `Антиген`, naziv: `Антиген`},
-        ];
-    let optionVT4a = `<option value="">Изаберите...</option>`;
-    vrstaTesta4a.forEach((test) => {
-        optionVT4a += `<option value="${test.punNaziv}">${test.naziv}</option>`;
-        });
-     selectVT4a.innerHTML = optionVT4a; */
 
     //<select> Sestre
     const selectSes = document.createElement(`select`);
@@ -156,31 +127,14 @@ window.addEventListener("load", function(){
         {ime: `Властимир Бабић`, tel: `0638245190`, naziv: `Власта`},
         {ime: `Божица Маријоковић`, tel: `0606998300`, naziv: `Божица`},
         {ime: `Весна Аћимовић`, tel: `0631661848`, naziv: `В Аћимовић`},
+        {ime: `Снежана Ракић Милојковић`, tel: `0638620332`, naziv: `Снежа`},
+        {ime: `Љиљана Микић`, tel: `0631852665`, naziv: `Љиља`},
                     ];
     let optionSes = `<option value="">Изабери сестру</option>`;
     sestre.forEach((ses) => {
         optionSes += `<option value="${ses.ime} ${ses.tel}">${ses.naziv}</option>`
     });
     selectSes.innerHTML = optionSes;
-
-
-   /* // Razlog testiranja
-    const selectRazlog = document.createElement(`select`);
-    selectRazlog.id = `SelectRazlog`;
-    selectRazlog.style.marginBottom = `10px`;
-    const razlogTesta = [
-        {value: `3`, punNaziv: `Лице са симптомима акутне респираторне болести и једним од клиничких знакова и смптома`, label: `Симптоми`},
-        {value: `10`, punNaziv: `Појединачни захтеви (на&nbsp;лични захтев)`, label: `Појединачни захтеви`},
-        {value: `12`, punNaziv: `Лица која се смештају у домове за старе и установе колективног смештаја`, label: `Смештај у старачки`},
-        {value: `13`, punNaziv: `Особе чије стање захтева хоспитализацију (неукључујући амбулантне прегледе и дневне болнице)`, label: `Хоспитализација`},
-        {value: `15`, punNaziv: `Специфичне групе експонираних након процене епидемиолошке службе (војска, полиција, студенти, запослени у јавном превозу…)`, label: `Специфичне групе`},
-        ];
-    let optionRazlog = `<option label="" value="">Изаберите разлог</option>`;
-    razlogTesta.forEach((raz) => {
-        optionRazlog += `<option label="${raz.label}" value="${raz.value}">${raz.punNaziv}</option>`;
-        });
-     selectRazlog.innerHTML = optionRazlog; */
-
 
     // deo 5 linija
     let linijaD5 = document.createElement(`p`);
@@ -234,11 +188,8 @@ window.addEventListener("load", function(){
     glavniDiv.appendChild(datum);
     glavniDiv.appendChild(dugmeD2);
     glavniDiv.appendChild(linijaD3);
-   // glavniDiv.appendChild(divD3);
     glavniDiv.appendChild(linijaD4a);
-    //glavniDiv.appendChild(selectVT4a);
     glavniDiv.appendChild(selectSes);
-    //glavniDiv.appendChild(selectRazlog);
     glavniDiv.appendChild(linijaD5);
     glavniDiv.appendChild(selectRez);
     glavniDiv.appendChild(autor);
@@ -252,11 +203,9 @@ window.addEventListener("load", function(){
     //Ubacivanje podataka na sajt RFZ-a
 
     //Telefon
-     //window.addEventListener("load", function(){
-        let telefonForma = document.getElementById(`telefon`).value;
+     let telefonForma = document.getElementById(`telefon`).value;
         document.getElementById(`Tel`).value = telefonForma;
-       // });
-    tel.addEventListener("input", function(){
+     tel.addEventListener("input", function(){
         let telValue = document.getElementById(`Tel`).value;
         document.getElementById(`telefon`).value = telValue;
     });
@@ -297,37 +246,6 @@ window.addEventListener("load", function(){
         document.getElementById(`snimi_evidenciju3`).click();
     });
 
-/*
-    //Deo 3 nevidljivost
-    linijaD3.addEventListener(`click`, () => {
-        let deo3DivHide = document.getElementById(`divD3`).style.display;
-        if (deo3DivHide === `none`) {
-        divD3.style.display = ``;
-        } else {divD3.style.display = `none`;}
-    });
-   //Deo 3 checkboxovi
-    chc1.addEventListener(`change`, () => {
-        let opstaSlabost = document.getElementById(`select2-slabost-container`).title;
-        if (opstaSlabost.title != `Да`) {
-        document.getElementById(`select2-slabost-container`).innerHTML = `Да`;
-        document.getElementById(`select2-slabost-container`).title = `Да`;
-        }
-    }); */
-
-   /* //Vrsta testa D4
-    selectVT4a.addEventListener("change", function(){
-        let vrstaTestaD4a = document.getElementById("SelectVT4a").value;
-        let mestoTesta = ``;
-        if (vrstaTestaD4a !== `Real Time PCR test`){
-           mestoTesta = `<option value="1196">(Лаб - брзи тест) Дом здравља Кучево</option>`;
-        }else {
-           mestoTesta = `<option value="19">Институт за вирусологију, вакцине и серуме Торлак</option>`;
-        }
-        document.getElementById(`select2-idVrstaTesta-container`).innerHTML = vrstaTestaD4a;
-        document.getElementById(`idLabTest`).innerHTML = mestoTesta;
-        }); */
-
-
     //Sestre
     selectSes.addEventListener("change", function(){
         let imeSestre = document.getElementById("SelectSes").value;
@@ -335,20 +253,10 @@ window.addEventListener("load", function(){
         document.getElementById(`mestoUzorak`).value = `Дом здравља Кучево`;
         });
 
-  /*  //Razlog testiranja
-    selectRazlog.addEventListener("change", function(){
-        let razlogValue = document.getElementById("SelectRazlog").value;
-        let razlogText = document.getElementById("SelectRazlog").selectedOptions[0].text;
-        document.getElementById(`idRazTest`).innerHTML = `<option value="${razlogValue}">${razlogText}</option>`;
-        }); */
-
     //Izdao Rezultat
     selectRez.addEventListener("change", function(){
         let imeIzdaoRez = document.getElementById("SelectRez").value.split(',')[0];
         document.getElementById(`imeRez`).value = imeIzdaoRez;
         });
-
-
-
 
 })()});
