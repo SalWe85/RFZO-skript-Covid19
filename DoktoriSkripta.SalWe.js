@@ -136,6 +136,13 @@ window.addEventListener("load", function(){
     });
     selectSes.innerHTML = optionSes;
 
+    //Sifra deo 4a
+    const sifra = document.createElement(`INPUT`);
+    sifra.id = `Sifra`;
+    sifra.style.marginBottom = `10px`;
+    sifra.setAttribute("type", "text");
+
+
     // deo 5 linija
     let linijaD5 = document.createElement(`p`);
     linijaD5.appendChild(document.createTextNode(`----------- Део 5 -----------`));
@@ -191,6 +198,7 @@ window.addEventListener("load", function(){
     glavniDiv.appendChild(linijaD4a);
     glavniDiv.appendChild(selectSes);
     glavniDiv.appendChild(linijaD5);
+    glavniDiv.appendChild(sifra);
     glavniDiv.appendChild(selectRez);
     glavniDiv.appendChild(autor);
 
@@ -201,6 +209,11 @@ window.addEventListener("load", function(){
     //------------------------------------------------------------------------------
 
     //Ubacivanje podataka na sajt RFZ-a
+    //Test plus
+   /* const buttons = document.querySelectorAll('.btn-box-tool[data-widget=collapse]');
+    console.log(buttons);
+    buttons.forEach(button => button.click());*/
+
 
     //Telefon
      let telefonForma = document.getElementById(`telefon`).value;
@@ -253,10 +266,21 @@ window.addEventListener("load", function(){
         document.getElementById(`mestoUzorak`).value = `Дом здравља Кучево`;
         });
 
+    //Sifra Uzorka
+    const table = document.getElementById('example1');
+    const rows = table.querySelectorAll('tbody > tr');
+    const lastRow = rows[rows.length - 1];
+    const lastRowCells = lastRow.querySelectorAll('td');
+    const sifraUzorkaCell = lastRowCells[8];
+    const sifraUzorka = sifraUzorkaCell.innerHTML;
+    const sifraPolje = document.getElementById(`Sifra`).value = sifraUzorka;
+    const sifraUzorkaDeo5 = document.getElementById(`sifraUzorka5`).value = sifraUzorka;
+
     //Izdao Rezultat
     selectRez.addEventListener("change", function(){
         let imeIzdaoRez = document.getElementById("SelectRez").value.split(',')[0];
         document.getElementById(`imeRez`).value = imeIzdaoRez;
         });
+
 
 })()});
