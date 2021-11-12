@@ -129,6 +129,9 @@ window.addEventListener("load", function(){
         {ime: `Весна Аћимовић`, tel: `0631661848`, naziv: `В Аћимовић`},
         {ime: `Снежана Ракић Милојковић`, tel: `0638620332`, naziv: `Снежа`},
         {ime: `Љиљана Микић`, tel: `0631852665`, naziv: `Љиља`},
+        {ime: `Тамара Милошевић`, tel: `0605011070`, naziv: `Тамара`},
+        {ime: `Јасмина Пауновић`, tel: `0691637567`, naziv: `Јасмина`},
+        {ime: `Мирослава Дрикић`, tel: `0603888268`, naziv: `Мирослава`},
                     ];
     let optionSes = `<option value="">Изабери сестру</option>`;
     sestre.forEach((ses) => {
